@@ -9,3 +9,5 @@
 4 - Créer une application permettant de lire et écrire dans les fichiers foo.txt et bar.txt en utilisant la configuration et le module "myFs".
 
 5 - Utiliser au maximum les notations ES6.
+
+6 - Utiliser l'API de Readline : https://nodejs.org/api/readline.html pour demander à l'utilisateur le contenu du fichier texte.
