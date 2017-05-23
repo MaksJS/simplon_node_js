@@ -1,0 +1,11 @@
+1 - Un module "myFs" permettant de :
+    - Lire un fichier au format utf8, de façon asynchrone
+    - Ecrire dans un fichier sans écraser le contenu, de façon asynchrone
+
+2 - Créer un fichier foo.txt et un fichier bar.txt dans le dossier myFiles/
+
+3 - Créer un fichier de configuration au format JSON contenant le chemin vers le dossier dans lequel se trouve les fichiers à lire et écrire.
+
+4 - Créer une application permettant de lire et écrire dans les fichiers foo.txt et bar.txt en utilisant la configuration et le module "myFs".
+
+5 - Utiliser au maximum les notations ES6.
