@@ -2,10 +2,23 @@
 const {appendFileUtf8, readFileUtf8} = require('./myFs')
 const {join} = require('path')
 const readline = require('readline');
+const fileEmitter = require('./fileEmitter')
 
 // importer la config
 const {FILES_DIRECTORY} = require('./config.json')
 
+const filename = join(__dirname, FILES_DIRECTORY, 'foo.txt')
+
+readFileUtf8(filename)
+
+fileEmitter.on('write:error', (err, filename) => console.error(`Error writing file ${filename}`, err))
+fileEmitter.on('write:success', () => console.log('Write file ok'))
+fileEmitter.on('read:error', (err, filename) => console.error(`Error reading file ${filename}`, err))
+fileEmitter.on('read:success', (data) => {
+    console.log(data)
+    appendFileUtf8(filename, 'my content')
+})
+    
 // console.log(appendFileUtf8, readFileUtf8, files_directory)
 
 // lire le fichier /"chemin_dans_la_config"/foo.txt et afficher le contenu dans la console
@@ -34,7 +47,7 @@ const callbackReadFileUtf8 = (err, data) => {
 
 readFileUtf8(filenameRead, callbackReadFileUtf8)*/
 
-const rl = readline.createInterface({
+/*const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
@@ -51,3 +64,4 @@ rl.question('What do you want to write?', (data) => {
     })
   rl.close();
 });
+*/
