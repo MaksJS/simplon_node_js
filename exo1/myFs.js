@@ -1,7 +1,4 @@
-// importer le "vrai" module fs pour l'utiliser
+const {readFile, appendFile} = require('fs')
 
-// fonction readFileUtf8(filename, callback)
-
-// fonction ....FileUtf8(filename, content, callback)
-
-// exporter les deux fonctions
+exports.readFileUtf8 = (filename, callback) => readFile(filename, 'utf8', callback)
+exports.appendFileUtf8 = (filename, content, callback) => appendFile(filename, content, callback)
